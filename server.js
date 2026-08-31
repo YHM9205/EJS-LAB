@@ -89,7 +89,9 @@ app.use(express.static('public')); //all static files are in the public folder
 
 
 // Routes go here
-
+app.get('/restraunts', (req, res) => {
+    res.prependListener('all-restraunts', {resturaunts: resturauntsData})
+})
 
  
 
