@@ -1,5 +1,5 @@
 // DATABASE
-const resturaunts = [
+const restaurants = [
   {
     id: 1,
     name: 'Al Baik',
@@ -80,7 +80,7 @@ const app = express() // creates a express application
 
 
 
-
+app.set ('view engine', 'ejs')
 
 
 app.use(express.static('public')); //all static files are in the public folder
@@ -94,14 +94,16 @@ app.get('/', (req, res) => {
 })
 
 app.get('/restaurants', (req, res) => {
-    console.log(restaurantData)
-    res.render('all-restraunts', {resturaunts: resturauntsData}) 
+    
+    res.render('all-restaurants', {restaurants: restaurants}) 
 })
 
-app.get('/restraunts', (req, res) => {
-    const Restaurant = resturauntsData.find(Restaurant => restaurant.id === req.params.id)
-    res.render('restaurants-details', restaurant)
-})
+
+app.get('/restaurants/:id', (req, res) => {
+    const restaurantId = Number(req.params.id);
+    const restaurant = restaurants.find(r => r.id === restaurantId);
+    res.render('restaurants-details', { restaurant: restaurant });
+});
 
  
 

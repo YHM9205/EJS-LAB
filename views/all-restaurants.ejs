@@ -8,11 +8,11 @@
 </head>
 
 <body>
-    <h1>All Restaurants</h1 
-           <ul>
+    <h1>All Restaurants</h1>
+    <ul>
     <% restaurants.forEach(restaurant => { %>
         <li>
-            <a href="/restaurants/<%= restaurant.id %> <%= restaurant.name %>"></a>
+           <a href="/restaurants/<%= restaurant.id %>"><%= restaurant.name %></a>
         </li>
         <% }) %>
             </ul>
