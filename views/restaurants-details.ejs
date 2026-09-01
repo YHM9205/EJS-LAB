@@ -12,7 +12,11 @@
     <h2>Menu</h2>
     <ul>
         <% restaurant.menu.forEach(meal => { %>
-            <li><%= meal.name %> - <%= meal.price %> BHD (Rating: <%= meal.rating %>)</li>
+            <li>
+                <h3><%= meal.name %></h3>
+                <p>Price: <%= meal.price %>BHD</p>
+                <p>Rating: <%= meal.rating %></p>
+            </li>
             <% }) %>
     </ul>
     <a href="/restaurants">Back To All Restaurants</a>
