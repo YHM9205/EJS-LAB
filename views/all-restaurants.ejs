@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Resturaunts</title>
+    <title>All Restaurants</title>
 </head>
 
 <body>
-    <h1>All Resturaunts</h1 
+    <h1>All Restaurants</h1 
            <ul>
-    <% restraunts.forEach(restraunt => { %>
+    <% restaurants.forEach(restaurant => { %>
         <li>
-            <a href="/restraunts/<%= restraunt.id %> <%= restraunt.name %>"></a>
+            <a href="/restaurants/<%= restaurant.id %> <%= restaurant.name %>"></a>
         </li>
         <% }) %>
             </ul>

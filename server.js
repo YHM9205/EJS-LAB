@@ -89,6 +89,10 @@ app.use(express.static('public')); //all static files are in the public folder
 
 
 // Routes go here
+app.get('/', (req, res) => {
+    res.render('homepage')
+})
+
 app.get('/restaurants', (req, res) => {
     console.log(restaurantData)
     res.render('all-restraunts', {resturaunts: resturauntsData}) 
@@ -96,6 +100,7 @@ app.get('/restaurants', (req, res) => {
 
 app.get('/restraunts', (req, res) => {
     const Restaurant = resturauntsData.find(Restaurant => restaurant.id === req.params.id)
+    res.render('restaurants-details', restaurant)
 })
 
  
