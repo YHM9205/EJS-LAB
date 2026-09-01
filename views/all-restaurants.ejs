@@ -13,6 +13,9 @@
     <% restaurants.forEach(restaurant => { %>
         <li>
            <a href="/restaurants/<%= restaurant.id %>"><%= restaurant.name %></a>
+           <% if (!restaurant.isOpen) { %>
+            - Closed
+           <% } %>
         </li>
         <% }) %>
             </ul>
